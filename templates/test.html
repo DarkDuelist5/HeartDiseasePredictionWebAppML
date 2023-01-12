@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Data Analytics</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li,a{
+            text-decoration: none;
+            list-style: none;
+            font-family: arial;
+        }
+        li{
+            padding: 15px;
+        }
+        li:hover{
+            background-color: azure;
+        }
+        .main>ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        nav{
+            /* border-bottom: 1px solid black; */
+            box-shadow: 0px 3px 8px lightblue;
+            position: sticky;
+            top : 0px;
+            background-color: white;
+        }
+        .top{
+            text-align: center;
+            padding: 5px;
+            background-color: rgba(3, 252, 119, 0.783);
+        }
+        h2,a{
+            letter-spacing: 2px;
+        }
+
+        .bg{
+            margin-top: 8px;
+            background-image: url("{{url_for('static', filename='pic.PNG')}}");
+            height: 60vh;
+            width: 100%;
+            background-size: cover;
+        }
+        .dropdown1{
+            display: none;
+            border-radius: 3%;
+        }
+        .one:hover>.dropdown1{
+            display: block;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            transform: translateX(-32%) translateY(15%);
+        }
+        .three:hover>.dropdown1{
+            display: block;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            transform: translateX(-29%) translateY(15%);
+        }
+        .four:hover>.dropdown1{
+            display: block;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            transform: translateX(-25%) translateY(15%);
+        }
+    </style>
+</head>
+<body>
+    <div class = "top">
+        <h2 style="font-family: arial;">Health Data Analytics</h1>
+    </div>
+    <nav class = "main">
+        <ul>
+            <li class = "one"><a>Heart</a>
+            <div class = "dropdown1"> 
+                <ul>
+                    <li><a href="">Information</a></li>
+                    <li><a href="HeartDisease.html">Risk Calculator</a></li>
+                </ul>
+            </div>
+            
+            </li>
+            <!-- <li class = "one"><a>Lungs</a>
+                <div class = "dropdown1"> 
+                    <ul>
+                        <li><a href="">Information</a></li>
+                        <li><a href="">Risk Calculator</a></li>
+                    </ul>
+                </div>
+            </li> -->
+            <li class="three"><a>Kidney</a>
+                <div class = "dropdown1"> 
+                    <ul>
+                        <li><a href="">Information</a></li>
+                        <li><a href="">Risk Calculator</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class = "four"><a>Diabetes</a>
+                <div class = "dropdown1"> 
+                    <ul>
+                        <li><a href="">Information</a></li>
+                        <li><a href="">Risk Calculator</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class = "bg"></div>
+
+</body>
+</html>

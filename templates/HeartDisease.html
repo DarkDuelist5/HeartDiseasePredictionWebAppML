@@ -1,0 +1,178 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .item1 {
+            height: 45px;
+            border: 1px solid green;
+            /* margin-bottom: 10px; */
+        }
+
+        .item1>h1 {
+            font-family: Arial;
+            font-size: 30;
+            letter-spacing: 1px;
+
+        }
+
+        .item2 {
+
+            background-image: url("{{url_for('static', filename='heartimg.jpg')}}");
+            background-size: contain;
+            height: auto;
+
+            background-repeat: no-repeat;
+
+        }
+
+        .item3 {
+            border-right: 1px solid black;
+            height: auto;
+            background-color: rgb(245, 245, 245);
+        }
+
+        .outer {
+            display: flex;
+
+        }
+
+        .outer>div {
+            width: 50%;
+        }
+
+
+        label {
+            margin-top: 0px;
+            margin: auto;
+            margin-left: 10%;
+            font-family: Arial;
+            font-size: 18px;
+        }
+
+        input {
+            display: block;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 15px;
+            padding: 6px;
+            border-radius: 3px;
+        }
+
+        form {
+            margin-top: 5vh;
+        }
+
+        #sub {
+            margin-top: 5vh;
+            font-size: 20px;
+            color: white;
+            width: 60%;
+            background-color: rgb(51, 51, 51);
+            border: none;
+        }
+
+        #sub:hover {
+            background-color: rgb(111, 111, 111);
+
+        }
+
+        select {
+            display: block;
+            width: 80%;
+            margin: auto;
+            padding: 6px;
+            border-radius: 3px;
+            height: 35px;
+            border: 2px solid black;
+            margin-bottom: 15px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="item1">
+        <h1>Check Presence of Heart Disease</h1>
+    </div>
+    <div class="outer">
+
+        <div class="item3">
+            <h2 style="margin-top: 10px;">Enter Test Values</h2>
+            <form action="{{url_for('predict')}}" method="post">
+                <label for="">Age</label>
+                <input type="number" id="age" name="age">
+                <label for="">Gender </label>
+                <input type="number" id="Gender" name="Gender">
+                <label for="">Chest Pain Type</label>
+                <select id="cars" name="cp">
+                    <option value="1">Typical Angina</option>
+                    <option value="2">Atypical Angina</option>
+                    <option value="3">Non-Anginal Pain</option>
+                    <option value="4">Asymptomatic</option>
+                </select>
+                <label for="">Resting Blood Pressure (in mm Hg) </label>
+                <input type="number" id="trestbps" name="trestbps">
+                <label for="">Serum cholestrol in mg/dl </label>
+                <input type="text" id="chol" name="chol">
+                <label for="">Fasting Blood Sugar </label>
+                <select id="fbs" name="fbs">
+                    <option value="0">Fasting Blood Sugar less than 120 mg/dl</option>
+                    <option value="1">Fasting Blood Sugar > 120 mg/dl</option>
+
+                </select>
+                <label for="">Resting Electro-Cardiographic Result</label>
+                <select id="restecg" name="restecg">
+                    <option value="0">Normal</option>
+                    <option value="1">having ST-T wave abnormality</option>
+                    <option value="2">Showing probable or definite left ventricular hypertrophy</option>
+
+                </select>
+                <label for="">Maximum Heart Rate Achieved </label>
+                <input type="number" id="thalach" name="thalach">
+                <label for="exang">Exercise Induced Angina</label>
+                <select id="exang" name="exang">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <label for="">ST depression induced by exercise relative to rest</label>
+                <input type="text" id="oldpeak" name="oldpeak">
+                <label for="">The slope of the peak exercise ST segment </label>
+                <select id="slope" name="slope">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <label for="">Number of major vessels (0-3) colored by flourosopy </label>
+                <input type="text" id="ca" name="ca">
+                <label for="">Type of Defect </label>
+                <select id="thal" name="thal">
+                    <option value="3">Normal Defect</option>
+                    <option value="6">Fixed Defect</option>
+                    <option value="7">Reversable Defect</option>
+                </select>
+
+                <input type="submit" id="sub">
+
+
+            </form>
+
+
+        </div>
+        <div class="item2">
+        </div>
+    </div>
+</body>
+
+</html>
